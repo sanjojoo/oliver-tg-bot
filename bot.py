@@ -3,6 +3,7 @@ from config import TOKEN, ADMIN_ID
 from database import USERS
 from database import USERS, save_db
 from roles import ROLES
+from telebot import types
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -11,7 +12,11 @@ bot = telebot.TeleBot(TOKEN)
 def is_admin(id):
     return id == ADMIN_ID
 
-
+def main_menu():
+    kb = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    kb.add("✅ Профиль", "📜 Список гарантов")
+    kb.add("🔎 Проверить человека", "🚫 Слить скамера")
+    return kb
 # ===== СТАРТ =====
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -23,41 +28,40 @@ def start(message):
     "🔎 *Как работает бот?*\n"
     "Всё очень просто — отправьте username любого гаранта,\n"
     "а мы проверим его репутацию и предоставим вам всю необходимую информацию.\n\n"
-    "Чтобы начать — просто отправьте чек @username."
+    "Чтобы начать — просто отправьте чек @username.",
+    reply_markup=main_menu()
 )
     
 
 
 # ===== ЧЕК ПОЛЬЗОВАТЕЛЯ =====
-@bot.message_handler(func=lambda m: m.text.lower().startswith("чек"))
+@bot.message_handler(func=lambda m: m.text and m.text.lower().startswith("чек"))
 def check_user(message):
-    parts = message.text.split()
+    try:
+        username = message.text.split()[1].replace("@", "")
+    except:
+        return bot.send_message(message.chat.id, "⚠ Использование:\nчек @username")
 
-    # проверяем корректность ввода
-    if len(parts) < 2:
-        return bot.send_message(
-            message.chat.id,
-            "⚠ Использование:\nчек @username"
-        )
-
-    username = parts[1].replace("@", "")
-
-    # ищем пользователя
     role = ROLES.get(username)
 
-    if role:
-        bot.send_message(
-            message.chat.id,
-            f"👤 Пользователь: @{username}\n"
-            f"🔰 Роль: {role}"
+    if role:  # ✅ пользователь найден
+        text = (
+            f"🎭 Информация о: @{username}\n"
+            f"📌 Статус: {role}\n"
+            f"🌍 Страна: не известна\n\n"
+            f"✅ Риск скама: 0%\n\n"
+            f"Человек является владельцем базы AK , ему можно доверять 🛡."
         )
-    else:
-        bot.send_message(
-            message.chat.id,
-            "❌ Данный человек не найден в нашей базе данных ❌\n\n"
-            "Скорее всего, он не является гарантом нашего чата или может быть фейковым аккаунтом 👁‍🗨.\n\n"
-            "⚠ Вероятность скама в таких случаях составляет 85% и выше ⛔️."
+    else:  # ❌ пользователь НЕ найден
+        text = (
+            f"🎭 Информация о: @{username}\n"
+            f"📌 Статус: не известен\n"
+            f"🌍 Страна: не известна\n\n"
+            f"⚠ Риск скама: 85%\n\n"
+            f"Человека нету в базе данных AK , будьте бдительными и используйте проверенных гарантов 🔖."
         )
+
+    bot.send_message(message.chat.id, text)
 
 
 
@@ -116,7 +120,34 @@ def edit_user(message):
     else:
         bot.send_message(message.chat.id, "❌ Нет в базе.")
         
+@bot.message_handler(func=lambda m: m.text == "✅ Профиль")
+def profile(message):
+    bot.send_message(message.chat.id, "Ваш профиль пока в разработке ✅")
+
+
+@bot.message_handler(func=lambda m: m.text == "📜 Список гарантов")
+def guarantors(message):
+    bot.send_message(message.chat.id,
+        "📜 Список гарантов:\n\n"
+        "@tgarmikk\n"
+        "@laiov\n"
+        "@damir"
+    )
+
+
+@bot.message_handler(func=lambda m: m.text == "🔎 Проверить человека")
+def ask_check(message):
+    bot.send_message(message.chat.id, "Введите:\nчек @username")
+
+
+@bot.message_handler(func=lambda m: m.text == "🚫 Слить скамера")
+def report_scammer(message):
+    bot.send_message(message.chat.id,
+        "🚫 Чтобы слить скамера, отправьте доказательства и username сюда:\n\n"
+        "@tgarmikk"
+    )
 
 
 
 bot.polling(none_stop=True)
+
