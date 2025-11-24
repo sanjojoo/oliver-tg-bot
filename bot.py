@@ -1,6 +1,5 @@
 import telebot
 from config import TOKEN, ADMIN_ID
-from database import USERS
 from database import USERS, save_db
 from roles import ROLES
 from telebot import types
@@ -164,6 +163,7 @@ def report_scammer(message):
 
 
 bot.polling(none_stop=True)
+
 
 
 
