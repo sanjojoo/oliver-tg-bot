@@ -143,7 +143,7 @@ def guarantors(message):
     bot.send_message(message.chat.id,
         "📜 Список гарантов:\n\n"
         "@tgarmikk\n"
-        "@laiov\n"
+        "laiov.t.me\n"
         "@damir"
     )
 
@@ -163,6 +163,7 @@ def report_scammer(message):
 
 
 bot.polling(none_stop=True)
+
 
 
 
