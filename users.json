@@ -1,0 +1,93 @@
+{
+    "laiov": {
+        "role": "Владелец",
+        "banner": "banners/@Laiov.jpg",
+        "desc": ""
+    },
+    "ziggystarman0": {
+        "role": "Гл.Админ",
+        "banner": "banners/админ.jpg",
+        "desc": ""
+    },
+    "pizdatag": {
+        "role": "Гл.Админ",
+        "banner": "banners/админ.jpg",
+        "desc": ""
+    },
+    "vkfadeo": {
+        "role": "Гл.Админ",
+        "banner": "banners/админ.jpg",
+        "desc": ""
+    },
+    "damir": {
+        "role": "Со Владелец",
+        "banner": "banners/@damir.jpg",
+        "desc": ""
+    },
+    "tgarmikk": {
+        "role": "Директор",
+        "banner": "banners/директор.jpg",
+        "desc": ""
+    },
+    "slc_usdt": {
+        "role": "Мл.Админ",
+        "banner": "banners/модератор.jpg",
+        "desc": ""
+    },
+    "fr1k_o": {
+        "role": "Мл.Админ",
+        "banner": "banners/модератор.jpg",
+        "desc": ""
+    },
+    "tgskal1es": {
+        "role": "Мл.Админ",
+        "banner": "banners/модератор.jpg",
+        "desc": ""
+    },
+    "kpacab4lk": {
+        "role": "Разработчик",
+        "banner": "banners/KRASAV4IK.jpg",
+        "desc": ""
+    },
+    "mister_desta": {
+        "role": "Проверен базы",
+        "banner": "banners/проверен базы.jpg",
+        "desc": "Это лица проверенные базой, человек проверен но не до конца"
+    },
+    "dinkie_tag": {
+        "role": "Проверен базы",
+        "banner": "banners/проверен базы.jpg",
+        "desc": "Это лица проверенные базой, человек проверен но не до конца"
+    },
+    "seiko_tag": {
+        "role": "Проверен базы",
+        "banner": "banners/проверен базы.jpg",
+        "desc": "Это лица проверенные базой, человек проверен но не до конца"
+    },
+    "username31z": {
+        "role": "Проверен базы",
+        "banner": "banners/проверен базы.jpg",
+        "desc": "Это лица проверенные базой, человек проверен но не до конца"
+    },
+    "tofugrandik": {
+        "role": "Проверен базы",
+        "banner": "banners/проверен базы.jpg",
+        "desc": "Это лица проверенные базой, человек проверен но не до конца"
+    },
+    "tgb0p": {
+        "role": "Проверен базы",
+        "banner": "banners/проверен базы.jpg",
+        "desc": "Это лица проверенные базой, человек проверен но не до конца"
+    },
+    "therenixs": {
+        "role": "Проверен базы",
+        "banner": "banners/проверен базы.jpg",
+        "desc": "Это лица проверенные базой, человек проверен но не до конца"
+    },
+    "routyyy_tag": {
+        "role": "Проверен базы",
+        "banner": "banners/проверен базы.jpg",
+        "desc": "Это лица проверенные базой, человек проверен но не до конца"
+}
+
+}
