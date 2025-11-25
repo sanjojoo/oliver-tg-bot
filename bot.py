@@ -190,14 +190,16 @@ def guarantors(message):
     bot.send_message(
         message.chat.id,
         "📜 Список гарантов:\n\n"
-        "tgarmikk.t.me\n"
-        "laiov.t.me\n"
-        "damirbeer.t.mer"
-        "@routyyy_tag"
-        "@neazy_bro"
-        "@Dinkie_tag"
-        "@slc_usdt"
+        "🔹 Директор: https://t.me/tgarmikk\n"
+        "🔹 Со владелец: https://t.me/damirbeer\n"
+        "🔹 Владелец: https://t.me/laiov\n\n"
+        "🔹 Гаранты чата:\n"
+        "https://t.me/routyyy_tag\n"
+        "https://t.me/neazy_bro\n"
+        "https://t.me/dinkie_tag\n"
+        "https://t.me/slc_usdt"
     )
+
 
 
 @bot.message_handler(func=lambda m: m.text == "🔎 Проверить человека")
@@ -215,6 +217,7 @@ def report_scammer(message):
 
 
 bot.polling(none_stop=True)
+
 
 
 
