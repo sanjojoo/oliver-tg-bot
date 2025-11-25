@@ -193,6 +193,10 @@ def guarantors(message):
         "tgarmikk.t.me\n"
         "laiov.t.me\n"
         "damirbeer.t.mer"
+        "@routyyy_tag"
+        "@neazy_bro"
+        "@Dinkie_tag"
+        "@slc_usdt"
     )
 
 
@@ -211,4 +215,5 @@ def report_scammer(message):
 
 
 bot.polling(none_stop=True)
+
 
