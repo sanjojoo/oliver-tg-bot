@@ -86,23 +86,24 @@
     },
     "routyyy_tag": {
         "role": "Гарант базы",
-        "banner": "banners/проверен базы.jpg",
+        "banner": "banners/гарант.jpg",
         "desc": "Гарант базы, можно смело доверять"
     },
     "neazy_bro": {
         "role": "Гарант базы",
-        "banner": "banners/проверен базы.jpg",
+        "banner": "banners/гарант.jpg",
         "desc": "Гарант базы, можно смело доверять"
     },
     "Dinkie_tag": {
         "role": "Гарант базы",
-        "banner": "banners/проверен базы.jpg",
+        "banner": "banners/гарант.jpg",
         "desc": "Гарант базы, можно смело доверять"
     },
     "slc_usdt": {
         "role": "Гарант базы",
-        "banner": "banners/проверен базы.jpg",
+        "banner": "banners/гарант.jpg",
         "desc": "Гарант базы, можно смело доверять"
     }
 }
+
 
